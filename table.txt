@@ -1,0 +1,132 @@
+名称	数据类型	备注
+name	varchar	用户名
+password	varchar	密码
+regtime	datetime	注册时间
+		
+		
+		
+		
+表名:User， 作用:登录用户表
+
+
+表名:group， 作用:学群（将来开通使用）
+名称	数据类型	备注
+name	varchar	用户名
+password	varchar	密码
+regtime	datetime	注册时间
+		
+		
+		
+		
+
+Name	varchar	名称
+time	datetime	建立时间
+User	int	建立者的id(user表)
+		
+
+名称	数据类型	备注
+name	varchar	用户名
+		
+regtime	datetime	注册时间
+		
+		
+		
+		
+
+
+表名:topic，作用:所发表的主题
+
+名称	数据类型	备注
+name	varchar	主题名
+time	datetime	发表时间
+user	varchar	发表者
+
+book	varchar	主题所引用文章的对应著作
+author	Varchar	主题所引用文章的作者
+chap	int	主题所属该书的章
+section	int	主题所属该书的节
+text	text	主题引用文本
+Book1	varchar	添加的作为标签的第一本书，下同
+Book2	varchar	
+Book3	varchar	
+Book4	varchar	
+Book5	varchar	
+Athor1	varchar	添加的作为标签的第一本书作者，下同
+Athor2	varchar	
+Athor3	varchar	
+Athor4	varchar	
+Athor5	varchar	
+activities	int	主题的访问次数
+group	Int	将来开通使用，所属学群id
+		
+		
+		
+		
+		
+		
+		
+		
+		
+表名:topic-answer 作用:主题讲解，解读贴
+
+名称	数据类型	备注
+Name	varchar	解读贴标题
+topic	int	所属主题的Id号
+User	varchar	发帖人
+Time	datetime	发帖时间
+text	text	发帖内容
+		
+		
+		
+
+表名:topic-question 作用:主题提问，提问帖
+
+名称	数据类型	备注
+Name	varchar	问题贴标题
+topic	int	所属主题的Id号
+User	varchar	发帖人
+Time	datetime	发帖时间
+text	text	发帖内容
+		
+		
+		
+
+
+表名：book 作用：书的展示
+名称	数据类型	备注
+name	varchar	书名
+author	varchar	书的作者
+Url	varchar	书的封面图片链接
+time	Datetime	书的发布时间
+		
+
+
+表名:chap 作用:书的章
+
+名称	数据类型	备注
+num	int	章名
+book	int	所属书Id(book表中)
+time	datetime	建立时间
+		
+
+
+表名:section 作用:书的节
+
+名称	数据类型	备注
+num	int	节名(不一定有)
+book	int	所属书Id(book表中)
+chap	int	所属节名
+time	datetime	建立时间
+
+表名:focus 作用:列出各个用户的关注（可以关注人，也可以关注主题）
+
+名称	数据类型	备注
+User	varchar	关注者的名字
+type	int	关注的类型，1为关注人，2为关注主题
+object	int	关注对象的id,关注人时在User表里取，关注主题在topic表里
+verify	int	默认为0，当进行关注用户的操作时，对方会收到信息，并验证相互好友，若对方受到了即改为1
+		
+		
+		
+		
+
